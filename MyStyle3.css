@@ -1,0 +1,22 @@
+h1{
+    font-size: 35px;
+    font-weight: lighter;
+    text-align: center;
+}
+#vb:hover{
+    background-color: darkred;
+    color: white;
+    font-size: 30px;
+}
+#vb{
+    font-size: 30px;
+}
+body{
+    background-color: rgb(255, 197, 197);
+}
+a{
+    text-align: right;
+}
+div{
+    text-align: center;
+}

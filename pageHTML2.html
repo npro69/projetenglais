@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The GTEP order Site - the TG experience</title>
+    <script>
+      function Verif() {
+        np = document.getElementById("vn").value;
+        for (i = 0; i < np.length; i++) {
+          if (
+            np.length < 3 ||
+            ((np.charAt(i).toUpperCase() < "A" ||
+              np.charAt(i).toUpperCase() > "Z") &&
+              np.charAt(i) != " ")
+          ) {
+            alert("the name should containt letters only and longer than 3");
+            return;
+          }
+        }
+        fn = document.getElementById("vfn").value;
+        for (j = 0; i < fn.length; j++) {
+          if (
+            fn.length < 3 ||
+            fn.charAt(j).toUpperCase() < "A" ||
+            fn.charAt(j).toUpperCase() > "Z"
+          ) {
+            alert(
+              "the family name should containt letters only and longer than 3"
+            );
+            return;
+          }
+        }
+
+        if (
+          document.getElementById("ma").checked == false &&
+          document.getElementById("fe").checked == false
+        ) {
+          alert("you should chose a gender");
+          return;
+        }
+
+        num = document.getElementById("vph").value;
+        if (isNaN(num) || num.length != 8) {
+          alert(
+            "your phone number should not containt other keys that are different than numbers"
+          );
+          return;
+        }
+        if (document.getElementById("ch").checked == false) {
+          alert(
+            "you cannot order from our site without accepting our terms and policy"
+          );
+          return;
+        }
+        window.open("pageHTML3.html", "_blank");
+      }
+    </script>
+    <link rel="stylesheet" href="MyStyle2.css" />
+  </head>
+  <body>
+    <form action="">
+      <legend>The GTEP order site</legend>
+      <label for="">Name :</label
+      ><input type="text" id="vn" class="txt" /><br />
+      <label for="">Family Name :</label
+      ><input type="text" id="vfn" class="txt" /><br />
+      <label for="">Gender :</label><input type="radio" id="ma" name="r1" />Male
+      <input type="radio" id="fe" name="r1" />Female<br />
+      <label for="">Gmail :</label
+      ><input type="email" id="vg" class="txt" /><br />
+      <label for="">Phone Number :</label
+      ><input type="text" id="vph" class="txt" /><br />
+      <label for="">Terms and Policy :</label><input type="checkbox" id="ch" />
+      accept on the terms and policy of the company !
+      <br />
+      <input type="button" value="OK" onclick="Verif()" class="butt" />
+      <input type="reset" value="Delete All" class="butt" />
+    </form>
+  </body>
+</html>
